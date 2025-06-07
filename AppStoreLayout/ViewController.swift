@@ -1,5 +1,6 @@
 
 import UIKit
+import SwiftUI
 
 class ViewController: UIViewController {
         
@@ -187,5 +188,18 @@ class ViewController: UIViewController {
         dataSource.apply(snapshot)
         
     }
+}
+
+@available(iOS 17.0, *)
+#Preview {
+    // Load the storyboard named "Main"
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    
+    // Instantiate the initial view controller (which is UINavigationController)
+    guard let navigationController = storyboard.instantiateInitialViewController() as? UINavigationController else {
+        fatalError("Could not instantiate initial UINavigationController from storyboard.")
+    }
+
+    return navigationController
 }
 
